@@ -13,6 +13,13 @@ class Ruleta
     insertItem(item) {
         this.arrItems.push(item)
         this.dibujar()
+        this.escribir()
+    }
+
+    eliminarItem(index) {
+        this.arrItems.splice(index,1)
+        this.dibujar()
+        this.escribir()
     }
 
     dibujar() {
@@ -34,7 +41,7 @@ class Ruleta
             context.rotate(-2*Math.PI/data.length)
         }
 
-        // ESCRIBIR TEXTO
+        // DIBUJAR TEXTO
         context.rotate(-2*Math.PI/(data.length*2))
         for (let i = 0; i < data.length; i++) {
             context.save()
@@ -50,12 +57,27 @@ class Ruleta
         }
     }
 
+    escribir() {
+        // ESCRIBIR EN BOX
+        document.querySelector("#box").innerHTML = ""
+        for (let i = 0; i < this.arrItems.length; i++) {
+            document.querySelector("#box").innerHTML += `
+                <div class="item">
+                    <span>${this.arrItems[i].getName()}</span>
+                    <span class="itemClose" id="${i}">&times;</span>
+                </div>
+            `
+        }
+    }
+
     limpiar() {
         this.arrItems = []
         this.dibujar()
+        this.escribir()
     }
 
     girar() {
+        console.log("girando...")
         // clase css
         // setear itemSel
     }
