@@ -3,3 +3,17 @@
     height: 520px;
     margin: auto;
 }
+
+.girar{
+   animation-name: girar;
+   animation-duration: 5s;
+   animation-iteration-count: 1;
+   animation-play-state: running;
+   animation-fill-mode: forwards;
+}
+
+@keyframes girar {
+   100%{
+      transform: rotate(var(--angulo));
+   }
+}
