@@ -1,0 +1,14 @@
+.btn{
+    border: none;
+    outline: none;
+    width: 19%;
+    padding: 12px;
+    background-color: rgb(108, 203, 206);
+    color: white;
+}
+.btn:hover{
+    background-color: rgb(147, 210, 212);
+}
+.btn:active{
+    background-color: rgb(89, 197, 202);;
+}

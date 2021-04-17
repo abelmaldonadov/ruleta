@@ -1,0 +1,23 @@
+#control{
+    padding: 20px;
+    margin: auto;
+    width: 520px;
+}
+#box{
+    border: 1px solid grey;
+    /* background-color: rgb(255, 146, 146); */
+    background-color: white;
+    width: 100%;
+    min-height: 50px;
+    margin: auto;
+    padding: 20px;
+}
+.action{
+    /* background-color: rgb(205, 205, 255); */
+    width: 100%;
+}
+#inpText{
+    width: 80%;
+    padding: 10px;
+    outline: none;
+}

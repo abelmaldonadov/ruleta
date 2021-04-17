@@ -1,0 +1,9 @@
+class Alerta
+{
+    show() {
+        // 
+    }
+    hide() {
+        // 
+    }
+}

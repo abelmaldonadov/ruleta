@@ -1,0 +1,12 @@
+.alert{
+    width: 1000px;
+    height: 300px;
+    display: flex;
+    background-color: rgb(178, 186, 187);
+}
+.imgError{
+    width: 40%;
+}
+.imgError img{
+    width: 100%;
+}
