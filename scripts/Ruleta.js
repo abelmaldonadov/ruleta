@@ -78,7 +78,8 @@ class Ruleta
 
     girar() {
         console.log("girando...")
-        // clase css
+        document.querySelector("#lienzo").style = "--angulo:3600deg"
+        document.querySelector("#lienzo").className = "girar"
         // setear itemSel
     }
 
