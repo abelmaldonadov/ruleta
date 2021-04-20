@@ -43,6 +43,7 @@ class Ruleta
 
         // DIBUJAR TEXTO
         context.rotate(-2*Math.PI/(data.length*2))
+        let cursor = 0
         for (let i = 0; i < data.length; i++) {
             context.save()
             context.translate(70,0)
@@ -54,6 +55,10 @@ class Ruleta
             context.fillText(data[i].getName(),70,0)
             context.restore()
             context.rotate(-2*Math.PI/data.length)
+
+            // DEFINIR INICIO Y FIN DEL SECTOR CIRCULAR
+            data[i].setSector(cursor, cursor+(2*Math.PI/data.length))
+            cursor += 2*Math.PI/data.length
         }
     }
 
@@ -76,16 +81,48 @@ class Ruleta
         this.escribir()
     }
 
-    girar() {
-        console.log("girando...")
-        document.querySelector("#lienzo").style = "--angulo:3600deg"
-        document.querySelector("#lienzo").className = "girar"
-        // setear itemSel
+    async girar() {
+        // ELEGIR EL RESULTADO ALEATORIO
+        this.disabledBtns()
+        let angleResult = (Math.random()*100) % (2*Math.PI)
+        for (const i of this.obtenerData()) {
+            if (angleResult >= i.getSector().ini && angleResult <= i.getSector().fin) {
+                this.itemSel = i
+            }
+        }
+
+        // GIRAR LA RULETA
+        document.querySelector("#lienzo").style = `--angulo:${3600 + (angleResult/Math.PI*180)}deg; --time:${TIME}s`
+        document.querySelector("#lienzo").className = ""
+        await new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                document.querySelector("#lienzo").className = "girar"
+                resolve()
+            }, 1)
+        })
+        await new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                document.querySelector("#lienzo").classList.add("paused")
+                ALERT.show(this.itemSel)
+                this.enabledBtns()
+                resolve()
+            }, TIME*1000-1)
+        })
     }
 
     obtenerData() {
         // VALIDAR QUE TENGA MAS DE 1 ELEMENTO
         if (this.arrItems.length < 2) { return this.dataPrueba }
         else { return this.arrItems }
+    }
+
+    disabledBtns() {
+        document.querySelector("#btnGirar").disabled = true
+        document.querySelector("#btnInsert").disabled = true
+    }
+
+    enabledBtns() {
+        document.querySelector("#btnGirar").disabled = false
+        document.querySelector("#btnInsert").disabled = false
     }
 }

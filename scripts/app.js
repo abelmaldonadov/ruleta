@@ -3,6 +3,7 @@ const WIDTH = 520
 const HEIGHT = 520
 const RADIUS = 260
 const COLOR = {min:195,max:255}
+const TIME = 10
 
 // RUN
 document.querySelector("#btnInsert").addEventListener("click",insertar)

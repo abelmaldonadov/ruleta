@@ -2,17 +2,31 @@
     width: 520px;
     height: 520px;
     margin: auto;
+    position: relative;
+}
+#sel{
+   position: absolute;
+   width: 200px;
+   top: calc(50% - 100px);
+   right: -20%;
 }
 
 .girar{
    animation-name: girar;
-   animation-duration: 5s;
+   animation-duration: var(--time);
    animation-iteration-count: 1;
    animation-play-state: running;
    animation-fill-mode: forwards;
 }
 
+.paused{
+   animation-play-state: paused;
+}
+
 @keyframes girar {
+   10%{
+      transform: rotate(-90deg);
+   }
    100%{
       transform: rotate(var(--angulo));
    }
