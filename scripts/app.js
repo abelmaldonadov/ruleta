@@ -1,7 +1,7 @@
 const CANVAS = document.querySelector("#lienzo")
-const WIDTH = 520
-const HEIGHT = 520
-const RADIUS = 260
+const WIDTH = (screen.width > 600) ? 520 : 260
+const HEIGHT = WIDTH
+const RADIUS = WIDTH/2
 const COLOR = {min:195,max:255}
 const TIME = 10
 

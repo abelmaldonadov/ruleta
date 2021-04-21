@@ -1,7 +1,7 @@
 #control{
     padding: 20px;
     margin: auto;
-    width: 520px;
+    max-width: 520px;
 }
 #box{
     border: 1px solid rgb(199, 197, 197);
@@ -29,7 +29,7 @@
 }
 #inpText{
     border: 1px solid rgb(199, 197, 197);
-    width: calc(99% - 100px);
+    width: calc(100% - 105px);
     padding: 10px;
     outline: none;
     color: teal;

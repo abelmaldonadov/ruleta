@@ -46,13 +46,13 @@ class Ruleta
         let cursor = 0
         for (let i = 0; i < data.length; i++) {
             context.save()
-            context.translate(70,0)
+            context.translate(WIDTH/8,0)
             context.lineWidth = 2
             context.font = "15px sans-serif"
             context.textAlign = "center"
             context.baseLine = "middle"
-            context.fillStyle = "black"
-            context.fillText(data[i].getName(),70,0)
+            context.fillStyle = "rgb(60, 60, 60)"
+            context.fillText(data[i].getName(),WIDTH/8,0)
             context.restore()
             context.rotate(-2*Math.PI/data.length)
 

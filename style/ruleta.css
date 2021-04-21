@@ -1,14 +1,13 @@
 #ruleta{
-    width: 520px;
-    height: 520px;
-    margin: auto;
-    position: relative;
+   position: relative;
+   width: 520px;
+   margin: auto;
 }
 #sel{
    position: absolute;
    width: 200px;
    top: calc(50% - 100px);
-   right: -20%;
+   right: -25%;
 }
 
 .girar{
@@ -18,7 +17,6 @@
    animation-play-state: running;
    animation-fill-mode: forwards;
 }
-
 .paused{
    animation-play-state: paused;
 }
@@ -29,5 +27,16 @@
    }
    100%{
       transform: rotate(var(--angulo));
+   }
+}
+
+@media (max-width: 600px) {
+   #ruleta{
+      width: 260px;
+   }
+   #sel{
+      width: 150px;
+      top: calc(50% - 75px);
+      right: -35%;
    }
 }
