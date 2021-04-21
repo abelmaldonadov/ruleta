@@ -3,7 +3,12 @@ class Ruleta
     constructor() {
         this.arrItems = []
         this.itemSel
+        this.modo = 1   // 1 = NORMAL / 2 = ELIMINAR AL GANADOR
         this.dataPrueba = [new Item("manzana"), new Item("pera"), new Item("mandarina"), new Item("uva"), new Item("naranja")]
+    }
+
+    setModo(modo) {
+        this.modo = modo
     }
 
     getItemSel() {
@@ -104,10 +109,19 @@ class Ruleta
             setTimeout(() => {
                 document.querySelector("#lienzo").classList.add("paused")
                 ALERT.show(this.itemSel)
+                this.aplicarModo()
                 this.enabledBtns()
                 resolve()
             }, TIME*1000-1)
         })
+    }
+
+    aplicarModo() {
+        if (this.modo == 2 && this.obtenerData().length > 2) {
+            this.obtenerData().splice(this.obtenerData().indexOf(this.itemSel),1)
+        }
+        this.dibujar()
+        this.escribir()
     }
 
     obtenerData() {

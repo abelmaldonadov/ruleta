@@ -8,6 +8,7 @@ const TIME = 10
 // RUN
 document.querySelector("#btnInsert").addEventListener("click",insertar)
 document.querySelector("#btnGirar").addEventListener("click",girar)
+document.querySelector("#checkModo").addEventListener("change",changeModo)
 const ruleta = new Ruleta()
 ruleta.dibujar()
 
@@ -33,6 +34,14 @@ function putEventEliminar() {
     let arrItems = document.querySelectorAll(".itemClose")
     for (const i of arrItems) {
         i.addEventListener("click",eliminar)
+    }
+}
+
+function changeModo(e) {
+    if (e.target.checked) {
+        ruleta.setModo(2) // ELIMINA AL GANADOR
+    } else {
+        ruleta.setModo(1) // NORMAL
     }
 }
 
