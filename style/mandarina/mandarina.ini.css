@@ -1,0 +1,54 @@
+:root{
+    /* COLORS */
+    /* GRAY SCALE */
+    --white: rgb(255, 255, 255);
+    --light: rgb(249, 249, 251);
+    --gray: rgb(163, 163, 163);
+    --dark: rgb(80, 80, 80);
+    --black: rgb(0, 0, 0);
+    /* PRIMARY */
+    --green: rgb(62, 224, 156);
+    --red: rgb(241, 41, 15);
+    --yellow: rgb(255, 210, 0);
+    --blue: rgb(48, 158, 255);
+    /* SECONDARY */
+    --orange: rgb(255, 145, 68);
+    --purple: rgb(125, 66, 218);
+    --sky: rgb(59, 218, 229);
+    --pink: rgb(247, 56, 89);
+    --brown: rgb(136, 64, 17);
+    /* PASTEL */
+    --l-green: linear-gradient(to top, #9ad4a1 0%, #d6eed4 100%);
+    --l-red: linear-gradient(to top, #fa7474 0%, #ffa295 100%);
+    --l-yellow: linear-gradient(to top, #fcdd9b 0%, #fdf7bf 100%);
+    --l-blue: linear-gradient(to top, #76a8ff 0%, #7cdeff 100%);
+    --l-orange: linear-gradient(to top, #ffa557 0%, #ffc490 100%);
+    --l-purple: linear-gradient(to top, #9890e3 0%, #b1cef4 100%);
+    --l-sky: linear-gradient(to top, #a9ccff 0%, #e0eefc 108%);
+    --l-pink: linear-gradient(to top, #ff7bc8 0%, #fdbdd8 100%);
+    --l-brown: linear-gradient(to top, #f1a18a 0%, #ffd6b7 100%);
+    /* NOTIFY */
+    --l-notify: linear-gradient(to top, #9ad4a1 0%, #d6eed4 100%);
+    --text-notify: rgb(255, 255, 255);
+    --notify: rgb(62, 224, 156);
+    /* SHADOW */
+    --shadow: 0 0 10px 10px rgba(0, 0, 0, 0.030);
+    /* BORDER - LINE */
+    --border: none;
+    /* BORDER - RADIUS */
+    --border-radius: 15px;
+    /* SPACE */
+    --p: 10px;
+    --m: 10px;
+    /* GRID */
+    --container: 60%;
+    /* RESPONSIVE - NO FUNCTIONAL */
+    /* --xl: 1300px;
+    --lg: 1100px;
+    --md: 900px;
+    --sm: 600px;
+    --xs: 0px; */
+    /* TEXT */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-size: 15px;
+}

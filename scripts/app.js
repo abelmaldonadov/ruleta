@@ -12,6 +12,13 @@ document.querySelector("#checkModo").addEventListener("change",changeModo)
 const ruleta = new Ruleta()
 ruleta.dibujar()
 
+function pulsarEnter(e) {
+    if (e.keyCode == 13) { // Enter = 13
+        e.preventDefault()
+        insertar()
+    }
+}
+
 function insertar() {
     let text = document.querySelector("#inpText").value
     if (text == "") { return }

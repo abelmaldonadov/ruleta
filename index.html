@@ -6,42 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruleta</title>
 
-    <link rel="stylesheet" href="style/general.css">
-    <link rel="stylesheet" href="style/btn.css">
-    <link rel="stylesheet" href="style/checkbox.css">
+    <!-- MANDARINA CSS STYLES -->
+    <link rel='stylesheet' href='style/mandarina/mandarina.ini.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/mandarinacss/mandarina@master/mandarina.min.css'>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style/ruleta.css">
-    <link rel="stylesheet" href="style/control.css">
-    <link rel="stylesheet" href="style/alert.css">
 </head>
 <body>
     <div id="app">
-        <h2 class="titulo">Ruleta 1.0</h2>
+        <h2 class="center py-3">Ruleta 1.0</h2>
         <div id="ruleta">
             <canvas id="lienzo"></canvas>
             <img id="sel" src="assets/finger.svg">
         </div>
         <div class="space"></div>
-        <div id="control">
-            <div class="modo">
-                <input type="checkbox" name="modo" id="checkModo">
-                <label class="checkLabel" for="checkModo">Eliminar item ganador</label>
+        <div id="control" class="row flex-center">
+            <div class="col md-7 lg-5 xl-4">
+                <div class="row">
+                    <div class="col">
+                        <input type="checkbox" name="modo" id="checkModo">
+                        <label class="check" for="checkModo">Eliminar item ganador</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="box" class="col white shadow radius">
+                            <!-- ITEMS INSERTADOS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col sm-6 center px-1">
+                        <input class="mt-1" placeholder="Inserta un elemento..." type="text" id="inpText" onkeypress="pulsarEnter(event)" data-height="75px">
+                    </div>
+                    <div class="col sm-3 center px-0">
+                        <button class="btn btn-block l-notify" id="btnInsert" data-height="75px">Insertar</button>
+                    </div>
+                    <div class="col sm-3 center px-1">
+                        <button class="btn btn-block l-notify" id="btnGirar" data-height="75px">Girar ahora!</button>
+                    </div>
+                </div>
             </div>
-            <div class="space"></div>
-            <div id="box">
-                <!-- ITEMS INSERTADOS -->
-            </div>
-            <div class="space"></div>
-            <div class="action">
-                <input type="text" id="inpText">
-                <button class="btn" id="btnInsert">Insertar</button>
-            </div>
-            <div class="space"></div>
-            <button class="btn btnBlock" id="btnGirar">Girar ahora!</button>
         </div>
 
         <!-- ALERTAS -->
+        <div class="modal" id="modal">
+            <div class="content white" data-width="200px">
+                <div class="modal-header"></div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button class="btn l-green modal-close">Ok</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- MANDARINA SCRIPTS -->
+    <script src='https://cdn.jsdelivr.net/gh/mandarinacss/mandarina@master/mandarina.min.js'></script>
+
+    <!-- Scripts -->
     <script src="scripts/Alert.js"></script>
     <script src="scripts/Item.js"></script>
     <script src="scripts/Ruleta.js"></script>

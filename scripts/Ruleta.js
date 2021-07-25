@@ -72,7 +72,7 @@ class Ruleta
         document.querySelector("#box").innerHTML = ""
         for (let i = 0; i < this.arrItems.length; i++) {
             document.querySelector("#box").innerHTML += `
-                <div class="item">
+                <div class="item m-tag">
                     <span>${this.arrItems[i].getName()}</span>
                     <span class="itemClose" id="${i}">&times;</span>
                 </div>
